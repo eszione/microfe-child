@@ -33,7 +33,7 @@
     "webpack-merge": "^5.9.0"
   },
   "scripts": {
-    "start": "webpack serve --mode production",
+    "start": "webpack serve --mode development",
     "build": "rm -rf dist && webpack --mode production",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

@@ -1,16 +1,15 @@
-import logo from './logo.svg';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
+import { Router } from './Router';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Child FE
-        </p>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <header>Trade Partner MicroFE</header>
+        <Router />
+      </div>
+    </BrowserRouter>
   );
 }
 

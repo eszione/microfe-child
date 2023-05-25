@@ -4,22 +4,20 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 const packageJson = require('../package.json')
 
 const config = {
-    mode: 'production',
+    mode: process.env.NODE_ENV,
     output: {
         publicPath: 'auto',
     },
     devServer: {
         port: 3000,
-        historyApiFallback: {
-            index: 'public/index.html'
-        }
+        historyApiFallback: true
     },
     plugins: [
         new ModuleFederationPlugin({
             name: 'MicroFeChild',
-            filename: 'microfechild.js',
+            filename: 'remoteEntry.js',
             exposes: {
-                './MicroFeChild': './src/index.tsx'
+                './MicroFeChild': './src/bootstrap.tsx'
             },
             shared: packageJson.dependencies
         }),

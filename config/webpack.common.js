@@ -15,11 +15,6 @@ module.exports = {
         maxEntrypointSize: 512000,
         maxAssetSize: 512000
     },
-    plugins: [
-        new MiniCssExtractPlugin({
-            filename: '[name].[contenthash:8].css',
-        }),
-    ],
     module: {
         rules: [
             {
@@ -51,6 +46,9 @@ module.exports = {
         ]
     },
     plugins: [
+        new MiniCssExtractPlugin({
+            filename: '[name].[contenthash:8].css',
+        }),
         new HtmlWebpackPlugin({
             favicon: 'public/favicon.ico',
             template: 'public/index.html'

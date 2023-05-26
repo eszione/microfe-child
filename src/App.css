@@ -4,7 +4,11 @@
 }
 
 header {
-  background: white;
   font-size: 2rem;
   font-weight: bold;
+}
+
+.header {
+  background: white;
+  color: black;
 }

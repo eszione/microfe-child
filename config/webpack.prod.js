@@ -18,7 +18,7 @@ const config = {
             filename: 'remoteEntry.js',
             exposes: {
                 './App': './src/bootstrap.tsx',
-                './Routes': './src/Router.tsx',
+                './Routes': './src/Routes.tsx',
                 './Components': './src/exports.tsx'
             },
             shared: Object.keys(packageJson.dependencies)

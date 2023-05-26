@@ -1,10 +1,10 @@
-import './Router.css';
+import './Routes.css';
 import { Navigate, useRoutes } from "react-router-dom";
 import ViewTradePartner from "./components/tradepartner/view/ViewTradePartner";
 import AddTradePartner from './components/tradepartner/add/AddTradePartner';
 import EditTradePartner from './components/tradepartner/edit/EditTradePartner';
 
-export const Router = () => {
+export default () => {
     return useRoutes(
         [
             {

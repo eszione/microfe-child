@@ -30,7 +30,7 @@ export default () => {
                 </div>
             </div>
             <div className='view-trade-partner-edit'>
-                <button className='navigation-button'><NavLink className='navigation-link' to='/edit'>Edit</NavLink></button>
+                <button className='navigation-button'><NavLink className='navigation-link' to='edit'>Edit</NavLink></button>
             </div>
         </div>
     )

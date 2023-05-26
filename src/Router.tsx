@@ -1,5 +1,5 @@
 import './Router.css';
-import { useRoutes } from "react-router-dom";
+import { Navigate, useRoutes } from "react-router-dom";
 import ViewTradePartner from "./components/tradepartner/view/ViewTradePartner";
 import AddTradePartner from './components/tradepartner/add/AddTradePartner';
 import EditTradePartner from './components/tradepartner/edit/EditTradePartner';
@@ -16,6 +16,9 @@ export const Router = () => {
             {
                 path: '/edit', element: <EditTradePartner />
             },
+            {
+                path: '*', element: <Navigate to='/' />
+            }
         ]
     );
 };

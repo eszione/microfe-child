@@ -4,21 +4,25 @@ import ViewTradePartner from "./components/tradepartner/view/ViewTradePartner";
 import AddTradePartner from './components/tradepartner/add/AddTradePartner';
 import EditTradePartner from './components/tradepartner/edit/EditTradePartner';
 
-export default () => {
+const Routes = () => {
     return useRoutes(
-        [
-            {
-                path: '/', element: <ViewTradePartner />
-            },
-            {
-                path: '/add', element: <AddTradePartner />
-            },
-            {
-                path: '/edit', element: <EditTradePartner />
-            },
-            {
-                path: '*', element: <Navigate to='/' />
-            }
-        ]
+        routes
     );
 };
+
+const routes = [
+    {
+        path: '', element: <ViewTradePartner />
+    },
+    {
+        path: 'add', element: <AddTradePartner />
+    },
+    {
+        path: 'edit', element: <EditTradePartner />
+    },
+    {
+        path: '*', element: <Navigate to='/' />
+    }
+];
+
+export { Routes, routes };

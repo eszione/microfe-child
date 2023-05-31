@@ -1,0 +1,66 @@
+.edit-trade-partner {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    margin: 0.5rem;
+    text-align: left;
+}
+
+.edit-trade-partner-edit {
+    margin: 0.5rem;
+}
+
+.edit-trade-partner-details {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.edit-trade-partner-row {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.edit-trade-partner-column-label {
+    color: gray;
+    padding: 0.5rem 0;
+}
+
+.edit-trade-partner-column-input {
+    margin-left: 0.5rem;
+    padding: 0.5rem 0;
+}
+
+.back-button {
+    background: none;
+    border: 1px solid orange;
+    cursor: pointer;
+    padding: 0.5rem;
+    width: 100px;
+}
+
+.back-link, .back-link:visited {
+    color: orange;
+    text-decoration: none;
+}
+
+.save-button {
+    background: orange;
+    border: 1px solid orange;
+    color: white;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+    width: 100px;
+}
+
+.save-button:hover {
+    background: none;
+    color: orange;
+}
+
+.save-button:disabled {
+    background: gray;
+    border: 1px solid gray;
+    color: white;
+}

@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react';
 import './ViewTradePartner.css';
-import { IViewTradePartnerData } from './IViewTradePartnerData';
 import { NavLink } from 'react-router-dom';
+import { ITradePartnerData } from '../../../shared/types/ITradePartnerData';
 
 export default () => {
-    const [data, setData] = useState<IViewTradePartnerData>();
+    const [data, setData] = useState<ITradePartnerData>();
 
     const getData = async () => {
         const response = await fetch('https://esmond-test-json.s3.us-west-2.amazonaws.com/tradepartner.json');
 
-        setData(await response.json());
+        const responseJson = await response.json();
+        
+        setData(responseJson);
     };
 
     useEffect(() => {
@@ -30,7 +32,9 @@ export default () => {
                 </div>
             </div>
             <div className='view-trade-partner-edit'>
-                <button className='navigation-button'><NavLink className='navigation-link' to='edit'>Edit</NavLink></button>
+                <button className='navigation-button'>
+                    <NavLink className='navigation-link' to='edit' state={data}>Edit</NavLink>
+                </button>
             </div>
         </div>
     )

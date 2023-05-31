@@ -1,5 +1,6 @@
 .view-trade-partner {
     display: flex;
+    flex-grow: 1;
     justify-content: space-between;
     margin: 0.5rem;
     text-align: left;
@@ -17,6 +18,7 @@
 
 .view-trade-partner-row {
     display: flex;
+    margin: 0.5rem 0;
 }
 
 .view-trade-partner-column-label {

@@ -26,7 +26,10 @@ const config = {
             },
             shared: {
                 ...packageJson.dependencies,
-                react: { requiredVersion: packageJson.dependencies.react }
+                react: { requiredVersion: packageJson.dependencies.react },
+                'react-dom': { requiredVersion: packageJson.dependencies['react-dom'] },
+                'react-redux': { requiredVersion: packageJson.dependencies['react-redux'] },
+                'react-intl': { requiredVersion: packageJson.dependencies['react-intl'] },
             }
         }),
     ]

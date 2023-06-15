@@ -1,19 +1,18 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import { render } from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
 const mount = (el: HTMLElement) => {
-  const root = createRoot(el);
-
-  root.render(
+  render(
     <React.StrictMode>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </React.StrictMode>
+    </React.StrictMode>,
+    el
   );
 };
 

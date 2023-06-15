@@ -2,6 +2,8 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { mockCustomers } from '../mockCustomers';
 import { Customers } from './Customers';
+import { IntlProvider } from "react-intl";
+import { BrowserRouter } from 'react-router-dom';
 
 export const WrapperCustomer = () => {
     const store = createStore(() => ({
@@ -9,7 +11,11 @@ export const WrapperCustomer = () => {
     }));
     return (
         <Provider store={store}>
-            <Customers />
+            <IntlProvider locale="en">
+                <BrowserRouter>
+                    <Customers />
+                </BrowserRouter>
+            </IntlProvider>
         </Provider>
     );
 };

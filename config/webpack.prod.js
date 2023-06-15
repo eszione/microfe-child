@@ -23,7 +23,6 @@ const config = {
                 './App': './src/bootstrap.tsx',
                 './Routes': './src/Routes.tsx',
                 './Components': './src/exports.tsx',
-                './newReact': require.resolve('react'),
             },
             shared: {
                 ...packageJson.dependencies,

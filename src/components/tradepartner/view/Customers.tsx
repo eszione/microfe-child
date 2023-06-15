@@ -90,7 +90,7 @@ export const Customers: FC<CustomersProps> = ({
 
       <PaginatedTableDeprecated
         testId={testIds.customerTableTestId}
-        isLoading={loading}
+        isLoading={isLoading}
         configuration={tableConfiguration(linkGenerator)}
         currentPageNumber={page}
         currentPageSize={pageSize}

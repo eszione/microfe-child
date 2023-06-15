@@ -3,7 +3,7 @@ import numeral from "numeral";
 import { createSelector } from "reselect";
 import { concatStrings, formatDate } from "../../utils/index";
 
-export const getCustomersRaw = (state: any) => state;
+export const getCustomersRaw = (state: any) => state.customers;
 
 //export const selectOrganizationCurrencySymbol = (state: any) => state.core.organizationSettings.data?.currency?.currencySymbol;
 

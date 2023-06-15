@@ -1,8 +1,8 @@
 import "./Routes.css";
 import { Navigate, useRoutes } from "react-router-dom";
-import { Customers } from "./components/tradepartner/view/Customers";
 import AddTradePartner from "./components/tradepartner/add/AddTradePartner";
 import EditTradePartner from "./components/tradepartner/edit/EditTradePartner";
+import { WrapperCustomer } from "./components/tradepartner/view/WrapperCustomer";
 
 const Routes = () => {
   return useRoutes(routes);
@@ -11,7 +11,7 @@ const Routes = () => {
 const routes = [
   {
     path: "",
-    element: <Customers />,
+    element: <WrapperCustomer />,
   },
   {
     path: "add",

@@ -1,4 +1,4 @@
-import React, { FC, Fragment, ReactNode } from "react";
+import { FC, Fragment, ReactNode, useEffect, useState } from "react";
 import { FormattedMessage } from "react-intl";
 
 import { Link as RouterLink } from "react-router-dom";
@@ -23,8 +23,7 @@ import * as msg from "../messages";
 // selectors
 import { getCustomers } from "../selectors";
 
-//store
-import { mockCustomers } from "../mockCustomers";
+import { useSelector } from 'react-redux';
 
 const testId = "customers-list";
 export const testIds = {
@@ -50,10 +49,15 @@ export const Customers: FC<CustomersProps> = ({
   customHeader,
   linkGenerator,
 }) => {
-  const { loading, data, totalCount } = getCustomers(mockCustomers);
+  const [isLoading, setIsLoading] = useState(true);
 
+  const { loading, data, totalCount } = useSelector(getCustomers);
+  useEffect(() => {
+    setIsLoading(loading);
+  }, [loading])
+  
   const [page, pageSize, search, setSearchPagination, setSearchText] =
-    useCustomersSearch();
+  useCustomersSearch();
 
   return (
     <Page

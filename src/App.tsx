@@ -1,9 +1,6 @@
 import "./App.css";
 import { Routes } from "./Routes";
 import { CustomFormats, IntlProvider, MessageFormatElement } from "react-intl";
-import { Provider } from 'react-redux'
-import { mockCustomers } from "./components/tradepartner/mockCustomers";
-import { createStore } from 'redux';
 
 function App() {
   const customFormats = {
@@ -24,12 +21,7 @@ function App() {
   }
   const values = {};
 
-  const store = createStore(() => ({
-    mockCustomers
-  }));
-
   return (
-    <Provider store={store}>
       <IntlProvider
         locale="en-NZ"
         formats={customFormats}
@@ -41,7 +33,6 @@ function App() {
           <Routes />
         </div>
       </IntlProvider>
-    </Provider>
   );
 }
 

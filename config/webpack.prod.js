@@ -22,9 +22,13 @@ const config = {
             exposes: {
                 './App': './src/bootstrap.tsx',
                 './Routes': './src/Routes.tsx',
-                './Components': './src/exports.tsx'
+                './Components': './src/exports.tsx',
+                './newReact': require.resolve('react'),
             },
-            shared: Object.keys(packageJson.dependencies)
+            shared: {
+                ...packageJson.dependencies,
+                react: { requiredVersion: packageJson.dependencies.react }
+            }
         }),
     ]
 };

@@ -1,5 +1,5 @@
 export const mockCustomers = {
-  loading: true,
+  loading: false,
   data: [
     {
       id: {

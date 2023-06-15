@@ -10,10 +10,10 @@ export const getCustomersRaw = (state: any) => state;
 export const getCustomers = createSelector(
   getCustomersRaw,
   //selectOrganizationCurrencySymbol,
-  ({ customerData }) => {
+  (customerData) => {
     const loading = customerData.loading;
     const totalCount = customerData.totalCount;
-    const data = (customerData || []).map((item: any) => {
+    const data = (customerData.data || []).map((item: any) => {
       const {
         id,
         address,

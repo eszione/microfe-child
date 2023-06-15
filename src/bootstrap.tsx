@@ -1,19 +1,38 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import { render } from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { IntlProvider } from "react-intl";
+import { Store } from './Store';
+
+const customFormats = {
+  number: {
+    NZD: {
+      style: "currency",
+      currency: "NZD",
+    },
+  },
+};
 
 const mount = (el: HTMLElement) => {
-  const root = createRoot(el);
-
-  root.render(
+  render(
     <React.StrictMode>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </React.StrictMode>
+      <Store>
+        <IntlProvider
+          locale="en-NZ"
+          formats={customFormats}
+          defaultLocale="en-NZ"
+          defaultFormats={customFormats}
+        >
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </IntlProvider>
+      </Store>
+    </React.StrictMode>,
+    el
   );
 };
 

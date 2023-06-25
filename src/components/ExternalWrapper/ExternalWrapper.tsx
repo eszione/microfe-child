@@ -6,11 +6,7 @@ import { Store } from '../../Store';
 export const ExternalWrapper = ({ children }: { children: ReactNode }) => {
     return (
         <Store>
-            <IntlProvider locale="en">
-                <BrowserRouter>
-                    {children}
-                </BrowserRouter>
-            </IntlProvider>
+                {children}
         </Store>
     );
 };

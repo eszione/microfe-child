@@ -8,6 +8,7 @@ const config = {
     output: {
         publicPath: 'auto',
     },
+    devtool: 'eval-source-map',
     devServer: {
         port: 3000,
         historyApiFallback: true,
@@ -28,6 +29,7 @@ const config = {
                 ...packageJson.dependencies,
                 react: { requiredVersion: packageJson.dependencies.react },
                 'react-dom': { requiredVersion: packageJson.dependencies['react-dom'] },
+                'react-router-dom': { requiredVersion: packageJson.dependencies['react-router-dom'] },
                 'react-redux': { requiredVersion: packageJson.dependencies['react-redux'] },
                 'react-intl': { requiredVersion: packageJson.dependencies['react-intl'] },
             }

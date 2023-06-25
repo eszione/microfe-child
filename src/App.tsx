@@ -1,11 +1,12 @@
 import "./App.css";
-import { Routes } from "./Routes";
+import { renderRoutes } from 'react-router-config';
+import routes from "./core/routes/routes";
 
 function App() {
   return (
     <div className="App">
       <header className="header">Trade Partner MicroFE</header>
-      <Routes />
+      {renderRoutes(routes as any)}
     </div>
   );
 }

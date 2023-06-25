@@ -22,7 +22,7 @@ const config = {
             filename: 'remoteEntry.js',
             exposes: {
                 './App': './src/bootstrap.tsx',
-                './Routes': './src/Routes.tsx',
+                './Routes': './src/core/routes/routes.ts',
                 './Components': './src/exports.tsx',
             },
             shared: {

@@ -3,9 +3,10 @@ import { render } from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import { IntlProvider } from "react-intl";
 import { Store } from './Store';
+import history from './core/history/history';
 
 const customFormats = {
   number: {
@@ -26,9 +27,9 @@ const mount = (el: HTMLElement) => {
           defaultLocale="en-NZ"
           defaultFormats={customFormats}
         >
-          <BrowserRouter>
+          <Router history={history}>
             <App />
-          </BrowserRouter>
+          </Router>
         </IntlProvider>
       </Store>
     </React.StrictMode>,

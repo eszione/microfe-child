@@ -1,4 +1,4 @@
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import './EditTradePartner.css';
 import { ITradePartnerData } from '../../../shared/types/ITradePartnerData';
 import { useState } from 'react';
@@ -9,7 +9,7 @@ export default () => {
     const location: { state: ITradePartnerData } = useLocation();
     const [data, setData] = useState(location?.state);
     const [loading, setLoading] = useState(false);
-    const navigate = useNavigate();
+    const history = useHistory();
 
     const update = (event: FormEvent<HTMLInputElement>, field: string) => {
         const newData = { ...data, [field]: event.currentTarget.value };
@@ -28,7 +28,7 @@ export default () => {
 
         if (response.ok) {
             toast('Uploaded!');
-            navigate('/tradepartners');
+            history.push('/tradepartners');
         }
         setLoading(false);
     };
@@ -47,7 +47,7 @@ export default () => {
                 </div>
             </div>
             <div className='edit-trade-partner-edit'>
-                <button className='back-button'><NavLink className='back-link' to='/tradepartners'>Back</NavLink></button>
+                <button className='back-button'><Link className='back-link' to='/tradepartners'>Back</Link></button>
                 <button className='save-button' onClick={save} disabled={loading}>Save</button>
             </div>
         </div>

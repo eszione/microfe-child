@@ -1,6 +1,5 @@
 import { FC, Fragment, ReactNode, useEffect, useState } from "react";
 import { FormattedMessage } from "react-intl";
-
 import { Link as RouterLink } from "react-router-dom";
 import styled from "styled-components";
 
@@ -58,7 +57,6 @@ export const Customers: FC<CustomersProps> = ({
   
   const [page, pageSize, search, setSearchPagination, setSearchText] =
   useCustomersSearch();
-
   return (
     <Page
       header={

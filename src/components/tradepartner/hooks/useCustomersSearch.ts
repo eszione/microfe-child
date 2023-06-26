@@ -2,7 +2,8 @@ import { useSearchParams } from "cosmos-components";
 import { useCallback, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-import { actions as customersActions } from "../ducks/customers";
+import { listCustomers } from "../../../apis/customers.api";
+import { customerActions } from "../actions/customers.action";
 
 export const useCustomersSearch = () => {
   const localDispatch = useDispatch();
@@ -42,13 +43,19 @@ export const useCustomersSearch = () => {
       return;
     }
 
-    localDispatch(
-      customersActions.listRequest({
+    const fetchCustomers = async () => {
+      return await listCustomers({
         ...(loadSearch && { text: loadSearch }),
         limit: pageSize,
         offset: pageSize * (page - 1),
-      })
-    );
+      });
+    };
+  
+    localDispatch(customerActions.triggered());
+
+    fetchCustomers().then(resp => {
+      localDispatch(customerActions.loaded(resp));
+    });
   };
 
   const loadPageDataCallback = useCallback(loadPageData, [page, pageSize]);

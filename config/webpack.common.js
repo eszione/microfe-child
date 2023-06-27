@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const root = path.join(__dirname, '../');
 
@@ -22,7 +23,13 @@ module.exports = {
         new HtmlWebpackPlugin({
             favicon: 'public/favicon.ico',
             template: 'public/index.html'
-        })
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'callback.html',
+            template: path.join(root, 'src/templates/callback.html'),
+            inject: false,
+        }),
+        new CopyWebpackPlugin([{ from: './config.json', to: './config.json' }]),
     ],
     module: {
         rules: [

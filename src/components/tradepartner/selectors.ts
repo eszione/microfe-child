@@ -44,7 +44,13 @@ export const getCustomers = createSelector(
         email: primaryEmail?.address || "",
         mobilePhone: primaryPhone?.number || "",
         address,
-        age: birthDate,
+        ...(!birthDate.startsWith('0001-01-01') &&
+          moment(birthDate).isValid() && {
+              age: moment(moment()).diff(
+                  moment(birthDate),
+                  'years',
+              ),
+          }),
         tags: concatStrings(tags),
         secondaryEmail: concatStrings(
           emails

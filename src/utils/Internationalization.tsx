@@ -19,9 +19,8 @@ type Props = {
 
 export const Internationalization: FC<Props> = ({ children }) => (
   <IntlProvider
-    locale={CURRENTLY_HARDCODED_LOCALE}
+    locale={navigator.language}
     defaultLocale={CURRENTLY_HARDCODED_LOCALE}
-    textComponent={Fragment} // TODO: This should not be needed as react-intl default is Fragment. For some reason it doesn't work. Investigation is required.
     defaultFormats={customFormats}
   >
     {children}

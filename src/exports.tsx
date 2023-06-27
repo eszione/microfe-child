@@ -4,8 +4,8 @@ import { ExternalCustomers } from './components/tradepartner/view/ExternalCustom
 import { Home } from './components/home/Home';
 
 export {
-    AddTradePartnerComponent,
-    EditTradePartnerComponent,
+    //AddTradePartnerComponent,
+    //EditTradePartnerComponent,
     ExternalCustomers,
-    Home,
+    //Home,
 };

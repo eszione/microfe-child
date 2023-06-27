@@ -22,7 +22,7 @@ const mount = (el: HTMLElement) => {
     <React.StrictMode>
       <Store>
         <IntlProvider
-          locale="en-NZ"
+          locale={navigator.language}
           formats={customFormats}
           defaultLocale="en-NZ"
           defaultFormats={customFormats}

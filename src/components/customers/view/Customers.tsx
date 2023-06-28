@@ -55,8 +55,8 @@ export const Customers: FC<CustomersProps> = ({
     setIsLoading(loading);
   }, [loading])
   
-  const [page, pageSize, search, setSearchPagination, setSearchText] =
-  useCustomersSearch();
+  const [page, pageSize, search, setSearchPagination, setSearchText] = useCustomersSearch();
+  
   return (
     <Page
       header={

@@ -9,5 +9,4 @@ const store = configureStore({
     preloadedState: {}
 });
 
-
 export { store as microFEStore };

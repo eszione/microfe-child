@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
-import customerReducer from './components/tradepartner/reducers/customers.reducer';
+import customerReducer from '../../components/customers/reducers/customers.reducer';
 
 const store = configureStore({
     devTools: { name: 'microFE' },

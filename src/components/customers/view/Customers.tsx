@@ -11,7 +11,7 @@ import {
   PaginatedTableDeprecated,
   TextButton,
 } from "cosmos-components";
-import SearchBox from "../../SearchBox";
+import SearchBox from "../../search-box";
 
 // hooks
 import { useCustomersSearch } from "../hooks";

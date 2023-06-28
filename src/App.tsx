@@ -35,7 +35,7 @@ function App() {
    
   return loading ? null : (
     <div className="App">
-      <header className="header">Trade Partner MicroFE</header>
+      <header className="header">Customers MicroFE</header>
       {renderRoutes(routes as any)}
     </div>
   );

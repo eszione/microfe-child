@@ -21,9 +21,7 @@ const config = {
             name: 'MicroFeChild',
             filename: 'remoteEntry.js',
             exposes: {
-                //'./App': './src/bootstrap.tsx',
-                //'./Routes': './src/core/routes/routes.ts',
-                './Components': './src/exports.tsx',
+                './Components': './src/externals/exports.tsx',
             },
             shared: {
                 ...packageJson.dependencies,

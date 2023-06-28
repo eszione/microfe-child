@@ -1,4 +1,4 @@
-import React, { FC, Fragment } from "react";
+import React, { FC } from "react";
 import { IntlProvider } from "react-intl";
 
 export const CURRENTLY_HARDCODED_LOCALE = "en-NZ";

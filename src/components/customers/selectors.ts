@@ -1,7 +1,7 @@
 import moment from "moment";
 import numeral from "numeral";
 import { createSelector } from "reselect";
-import { concatStrings, formatDate } from "../../utils/index";
+import { concatStrings, formatDate } from "../../helpers/index";
 
 export const getCustomersRaw = (state: any) => state.customers;
 

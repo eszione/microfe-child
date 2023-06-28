@@ -19,13 +19,18 @@ function App() {
       silentRedirectUri: `${window.location.protocol}//${window.location.host}/callback.html?silent`,
     };
   
-    AstroSDK.setup(opts).then(res => {
-      console.log(res);
-      setLoading(false);
-    }).catch(e => {
+    const tempOicdKey = 'oidc.user:https://[env]accounts.thlonline.com:[client_id]';
+    const tempOicd = localStorage.getItem(tempOicdKey);
+    if (tempOicd) {
+      localStorage.setItem(tempOicdKey.replace('[env]', env).replace('[client_id]', clientId), tempOicd);
+      localStorage.removeItem(tempOicdKey);
+    }
+    AstroSDK.setup(opts).catch(e => {
       console.error(e);
       setLoading(false);
-    }); 
+    }).finally(() => {
+      setLoading(false);
+    });
   });
    
   return loading ? null : (

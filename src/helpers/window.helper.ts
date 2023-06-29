@@ -5,4 +5,6 @@ const getHistory = () => window['Motek_history'] ?? history;
 
 const getApiSDK = () => window['MotekSDK'] ?? AstroSDK;
 
-export { getHistory, getApiSDK };
+const getHostStore = () => window['host_store'];
+
+export { getHistory, getApiSDK, getHostStore };

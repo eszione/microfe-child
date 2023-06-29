@@ -100,63 +100,67 @@ export const Customers: FC<CustomersProps> = ({
   );
 };
 
-const tableConfiguration = (linkGenerator: any) => [
+const tableConfiguration = (linkGenerator) => [
   {
-    columnName: <FormattedMessage {...msg.headers.name} />,
-    renderCell: ({ id, name }) => (
-      <Link
-        data-test-id={testIds.editCustomerTestId}
-        as={RouterLink}
-        to={linkGenerator ? linkGenerator(id) : `/customers/${id.profileId}`}
-      >
-        {name}
-      </Link>
-    ),
+      columnName: <FormattedMessage {...msg.headers.name} />,
+      renderCell: ({ id, name }) => (
+          <Link
+              data-test-id={testIds.editCustomerTestId}
+              as={RouterLink}
+              to={
+                  linkGenerator
+                      ? linkGenerator(id)
+                      : `/customers/${id.profileId}`
+              }
+          >
+              {name}
+          </Link>
+      ),
   },
   {
-    columnName: <FormattedMessage {...msg.headers.email} />,
-    dataKey: "email",
+      columnName: <FormattedMessage {...msg.headers.email} />,
+      dataKey: 'email',
   },
   {
-    columnName: <FormattedMessage {...msg.headers.mobilePhone} />,
-    dataKey: "mobilePhone",
+      columnName: <FormattedMessage {...msg.headers.mobilePhone} />,
+      dataKey: 'mobilePhone',
   },
   {
-    columnName: <FormattedMessage {...msg.headers.address} />,
-    dataKey: "address",
+      columnName: <FormattedMessage {...msg.headers.address} />,
+      dataKey: 'address',
   },
   {
-    columnName: <FormattedMessage {...msg.headers.country} />,
-    dataKey: "country",
+      columnName: <FormattedMessage {...msg.headers.country} />,
+      dataKey: 'country',
   },
   {
-    columnName: <FormattedMessage {...msg.headers.age} />,
-    dataKey: "age",
+      columnName: <FormattedMessage {...msg.headers.age} />,
+      dataKey: 'age',
   },
   {
-    columnName: <FormattedMessage {...msg.headers.previousBookings} />,
-    dataKey: "numberOfRentals",
+      columnName: <FormattedMessage {...msg.headers.previousBookings} />,
+      dataKey: 'numberOfRentals',
   },
   {
-    columnName: <FormattedMessage {...msg.headers.lastBooking} />,
-    dataKey: "lastBooking",
+      columnName: <FormattedMessage {...msg.headers.lastBooking} />,
+      dataKey: 'lastBooking',
   },
   {
-    columnName: <FormattedMessage {...msg.headers.totalSpent} />,
-    dataKey: "totalSpent",
+      columnName: <FormattedMessage {...msg.headers.totalSpent} />,
+      dataKey: 'totalSpent',
   },
   {
-    columnName: <FormattedMessage {...msg.headers.lastBookingPassengers} />,
-    renderCell: ({ lastBookingPassengers = {} }) =>
-      renderPassengers(lastBookingPassengers),
+      columnName: <FormattedMessage {...msg.headers.lastBookingPassengers} />,
+      renderCell: ({ lastBookingPassengers = {} }) =>
+          renderPassengers(lastBookingPassengers),
   },
   {
-    columnName: <FormattedMessage {...msg.headers.tags} />,
-    dataKey: "tags",
+      columnName: <FormattedMessage {...msg.headers.tags} />,
+      dataKey: 'tags',
   },
   {
-    columnName: <FormattedMessage {...msg.headers.secondaryEmail} />,
-    dataKey: "secondaryEmail",
+      columnName: <FormattedMessage {...msg.headers.secondaryEmail} />,
+      dataKey: 'secondaryEmail',
   },
 ];
 
@@ -164,22 +168,27 @@ const renderPassengers = ({
   noOfAdults,
   noOfChildren,
   noOfInfants,
-  lastBookingPassengers,
 }: PassengersProps) => (
   <Fragment>
-    {noOfAdults && (
-      <FormattedMessage {...msg.labels.adult} values={{ noOfAdults }} />
-    )}
-    {noOfChildren && (
-      <FieldSeperator>
-        <FormattedMessage {...msg.labels.children} values={{ noOfChildren }} />
-      </FieldSeperator>
-    )}
-    {noOfInfants && (
-      <FieldSeperator>
-        <FormattedMessage {...msg.labels.infant} values={{ noOfInfants }} />
-      </FieldSeperator>
-    )}
+      {noOfAdults && (
+          <FormattedMessage {...msg.labels.adult} values={{ noOfAdults }} />
+      )}
+      {noOfChildren && (
+          <FieldSeperator>
+              <FormattedMessage
+                  {...msg.labels.children}
+                  values={{ noOfChildren }}
+              />
+          </FieldSeperator>
+      )}
+      {noOfInfants && (
+          <FieldSeperator>
+              <FormattedMessage
+                  {...msg.labels.infant}
+                  values={{ noOfInfants }}
+              />
+          </FieldSeperator>
+      )}
   </Fragment>
 );
 

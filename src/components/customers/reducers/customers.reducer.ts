@@ -10,8 +10,7 @@ export default (state = intialState, { type, payload }) => {
         case customerActionsConstants.triggered:
             return { ...intialState, loading: true };
         case customerActionsConstants.loaded: {
-            const data = payload?.data;
-            return { ...intialState, data };
+            return { ...intialState, ...payload };
         }
         default:
             return state;

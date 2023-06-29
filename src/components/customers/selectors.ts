@@ -2,143 +2,79 @@ import moment from "moment";
 import numeral from "numeral";
 import { createSelector } from "reselect";
 import { concatStrings, formatDate } from "../../helpers/index";
+import { getHostStore } from "../../helpers/window.helper";
 
 export const getCustomersRaw = (state: any) => state.customers;
 
-//export const selectOrganizationCurrencySymbol = (state: any) => state.core.organizationSettings.data?.currency?.currencySymbol;
-
 export const getCustomers = createSelector(
   getCustomersRaw,
-  //selectOrganizationCurrencySymbol,
-  (customerData) => {
-    const loading = customerData.loading;
-    const totalCount = customerData.totalCount;
-    const data = (customerData.data || []).map((item: any) => {
-      const {
-        id,
-        address,
-        firstName,
-        lastName,
-        emails,
-        birthDate,
-        rentals,
-        tags,
-        primaryEmail,
-        primaryPhone,
-      } = item;
+  (customers) => {
+      const selectCurrencySymbol = getHostStore()?.getState()?.core?.organizationSettings?.data?.currency?.currencySymbol ?? '$';
+      const data = (customers.data || []).map((item) => {
+          const {
+              id,
+              addresses,
+              firstName,
+              lastName,
+              emails,
+              birthDate,
+              rentals,
+              tags,
+              primaryEmail,
+              primaryPhone,
+          } = item;
 
-      const {
-        last: {
-          profiles: {
-            noOfPassengers = null,
-            noOfAdults = null,
-            noOfChildren = null,
-            noOfInfants = null,
-          } = {},
-        } = {},
-      } = rentals || {};
+          const lastPhysicalAddress = addresses
+              .filter((addr) => addr.type === 'Physical')
+              .slice(-1)[0];
 
-      return {
-        id,
-        name: concatStrings([firstName, lastName], " "),
-        email: primaryEmail?.address || "",
-        mobilePhone: primaryPhone?.number || "",
-        address,
-        ...(!birthDate.startsWith('0001-01-01') &&
-          moment(birthDate).isValid() && {
-              age: moment(moment()).diff(
-                  moment(birthDate),
-                  'years',
+          const { line1, line2, city, country } = lastPhysicalAddress || {};
+          const {
+              last: {
+                  profiles: {
+                      noOfPassengers = null,
+                      noOfAdults = null,
+                      noOfChildren = null,
+                      noOfInfants = null,
+                  } = {},
+                  bookingDate = moment(),
+              } = {},
+          } = rentals || {};
+
+          return {
+              id,
+              name: concatStrings([firstName, lastName], ' '),
+              email: primaryEmail?.address || '',
+              mobilePhone: primaryPhone?.number || '',
+              address: concatStrings([line1, line2, city]),
+              country,
+              ...(!birthDate.startsWith('0001-01-01') &&
+                  moment(birthDate).isValid() && {
+                      age: moment(bookingDate).diff(
+                          moment(birthDate),
+                          'years',
+                      ),
+                  }),
+              tags: concatStrings(tags),
+              secondaryEmail: concatStrings(
+                  emails
+                      ?.filter((email) => email.type === 'Secondary Email')
+                      .map((email) => email.address),
               ),
-          }),
-        tags: concatStrings(tags),
-        secondaryEmail: concatStrings(
-          emails
-            ?.filter((email: any) => email.type === "Secondary Email")
-            .map((email: any) => email.address)
-        ),
-        numberOfRentals: rentals?.count,
-        lastBooking: formatDate(rentals?.last?.bookingDate),
-        totalSpent: "$" + numeral(rentals?.totalSpent).format("0,0.00"),
-        lastBookingPassengers: {
-          ...(noOfPassengers && { noOfPassengers }),
-          ...(noOfAdults && { noOfAdults }),
-          ...(noOfChildren && { noOfChildren }),
-          ...(noOfInfants && { noOfInfants }),
-        },
-      };
-    });
+              numberOfRentals: rentals?.count,
+              lastBooking: formatDate(rentals?.last?.bookingDate),
+              totalSpent:
+                  selectCurrencySymbol +
+                  numeral(rentals?.totalSpent).format('0,0.00'),
+              lastBookingPassengers: {
+                  ...(noOfPassengers && { noOfPassengers }),
+                  ...(noOfAdults && { noOfAdults }),
+                  ...(noOfChildren && { noOfChildren }),
+                  ...(noOfInfants && { noOfInfants }),
+              },
+          };
+      });
 
-    return { loading, data, totalCount };
-  }
+      return { ...customers, data };
+  },
 );
-
-/*
-
-export const getCustomer = createSelector(
-  getCustomerRaw,
-  getAddress,
-  (customer: any, addresses: any) => {
-    const customerDetail = customer?.data?.customer;
-    const commentDetail = customer?.data?.comment || {};
-
-    if (!customerDetail) {
-      return customer;
-    }
-
-    const data = {
-      ...customer.data,
-      customer: {
-        ...customerDetail,
-        comments: commentDetail.text,
-        tags: customerDetail?.tags?.map((tag: any) => ({
-          label: tag.label ?? tag,
-          value: tag.value ?? tag,
-        })),
-        addresses,
-      },
-    };
-
-    return { ...customer, data };
-  }
-);
-
-export const selectSearchProfile = createSelector(
-  selectSearchProfileRaw,
-  ({ data }) => {
-    if (!data || !data?.customer) {
-      return;
-    }
-    const {
-      title,
-      firstName,
-      lastName,
-      emails = [],
-      phones = [],
-      primaryPhone = {},
-      primaryEmail = {},
-      id,
-    } = data.customer;
-
-    const getPrimary = ({ primary }) => primary;
-
-    const phone =
-      (getPrimary(primaryPhone) && primaryPhone.number) ||
-      phones.find((profilePhone: any) => getPrimary(profilePhone))?.number;
-
-    const email =
-      (getPrimary(primaryEmail) && primaryEmail.address) ||
-      emails.find((profileEmail: any) => getPrimary(profileEmail))?.address;
-
-    return {
-      title,
-      firstName,
-      lastName,
-      email: email ?? "",
-      phone,
-      id: id?.profileId,
-    };
-  }
-);
-
-*/

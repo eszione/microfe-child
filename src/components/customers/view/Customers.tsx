@@ -4,13 +4,12 @@ import { Link as RouterLink } from "react-router-dom";
 import styled from "styled-components";
 
 // components
-import {
-  H1,
-  Link,
-  Page,
-  PaginatedTableDeprecated,
-  TextButton,
-} from "cosmos-components";
+import { H1 } from 'cosmos-components/dist/components/Headers';
+import { Link } from 'cosmos-components/dist/components/Link';
+import { Page } from 'cosmos-components/dist/components/Page';
+import { PaginatedTableDeprecated } from 'cosmos-components/dist/components/deprecated/PaginatedTableDeprecated';
+import { TextButton } from 'cosmos-components/dist/components/Button';
+
 import SearchBox from "../../search-box";
 
 // hooks

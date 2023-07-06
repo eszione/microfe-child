@@ -13,7 +13,7 @@
     "@types/react-dom": "^18.2.4",
     "astro-actions": "1.6.17",
     "astro-sso-sdk": "^1.6.17",
-    "cosmos-components": "1.29.0",
+    "cosmos-components": "2.0.0-alpha.288",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "numeral": "^2.0.6",

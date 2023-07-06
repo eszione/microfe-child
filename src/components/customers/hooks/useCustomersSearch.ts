@@ -1,4 +1,4 @@
-import { useSearchParams } from "cosmos-components";
+import { useSearchParams } from "cosmos-components/dist/customHooks/index";
 import { useCallback, useEffect } from "react";
 import { useDispatch } from "react-redux";
 

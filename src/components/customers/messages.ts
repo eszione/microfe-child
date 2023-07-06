@@ -80,7 +80,7 @@ export const buttons = defineMessages({
 export const titles = defineMessages({
   list: {
     id: `${titleScope}.list`,
-    defaultMessage: "Customers",
+    defaultMessage: "Customers - MicroFE",
   },
   create: {
     id: `${titleScope}.create`,

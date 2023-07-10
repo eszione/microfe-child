@@ -10,7 +10,7 @@ import { Page } from 'cosmos-components/dist/components/Page';
 import { PaginatedTableDeprecated } from 'cosmos-components/dist/components/deprecated/PaginatedTableDeprecated';
 import { TextButton } from 'cosmos-components/dist/components/Button';
 
-import SearchBox from "../../search-box";
+import SearchBox from "../../search";
 
 // hooks
 import { useCustomersSearch } from "../hooks";

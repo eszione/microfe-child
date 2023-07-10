@@ -8,7 +8,7 @@ const config = {
     output: {
         publicPath: 'auto',
     },
-    devtool: 'eval-source-map',
+    devtool: 'source-map',
     devServer: {
         port: 3000,
         historyApiFallback: true,
@@ -18,7 +18,7 @@ const config = {
     },
     plugins: [
         new ModuleFederationPlugin({
-            name: 'MicroFeChild',
+            name: 'MicroFETradePartners',
             filename: 'remoteEntry.js',
             exposes: {
                 './Components': './src/externals/exports.tsx',

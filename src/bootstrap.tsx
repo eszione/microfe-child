@@ -1,19 +1,27 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import { render } from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
+import { Store } from './core/store/Store';
+import { Internationalization } from './components/internationalization/Internationalization';
+import { getHistory } from './helpers/window.helper';
+import { CosmosTheme, defaultTheme } from 'cosmos-components/dist/theme';
 
 const mount = (el: HTMLElement) => {
-  const root = createRoot(el);
-
-  root.render(
+  render(
     <React.StrictMode>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </React.StrictMode>
+      <Internationalization>
+        <Router history={getHistory()}>
+          <CosmosTheme theme={defaultTheme}>
+            <Store>
+              <App />
+            </Store>
+          </CosmosTheme>
+        </Router>
+      </Internationalization>
+    </React.StrictMode>,
+    el
   );
 };
 
@@ -23,10 +31,5 @@ if (process.env.NODE_ENV === 'development') {
       mount(devRoot)
   }
 }
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
 
 export { mount };

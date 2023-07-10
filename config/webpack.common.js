@@ -1,5 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const path = require('path');
 const root = path.join(__dirname, '../');
 
@@ -9,6 +12,16 @@ module.exports = {
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js']
+    },
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                parallel: true,
+                sourceMap: true,
+            }),
+            new OptimizeCSSAssetsPlugin({}),
+        ],
     },
     performance: {
         hints: false,
@@ -22,7 +35,13 @@ module.exports = {
         new HtmlWebpackPlugin({
             favicon: 'public/favicon.ico',
             template: 'public/index.html'
-        })
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'callback.html',
+            template: path.join(root, 'src/templates/callback.html'),
+            inject: false,
+        }),
+        new CopyWebpackPlugin([{ from: './config.json', to: './config.json' }]),
     ],
     module: {
         rules: [

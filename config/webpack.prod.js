@@ -8,6 +8,7 @@ const config = {
     output: {
         publicPath: 'auto',
     },
+    devtool: 'eval-source-map',
     devServer: {
         port: 3000,
         historyApiFallback: true,
@@ -20,13 +21,15 @@ const config = {
             name: 'MicroFeChild',
             filename: 'remoteEntry.js',
             exposes: {
-                './App': './src/bootstrap.tsx',
-                './Routes': './src/Routes.tsx',
-                './Components': './src/exports.tsx',
+                './Components': './src/externals/exports.tsx',
             },
             shared: {
                 ...packageJson.dependencies,
-                react: { requiredVersion: packageJson.dependencies.react }
+                react: { requiredVersion: packageJson.dependencies.react },
+                'react-dom': { requiredVersion: packageJson.dependencies['react-dom'] },
+                'react-router-dom': { requiredVersion: packageJson.dependencies['react-router-dom'] },
+                'react-redux': { requiredVersion: packageJson.dependencies['react-redux'] },
+                'react-intl': { requiredVersion: packageJson.dependencies['react-intl'] },
             }
         }),
     ]

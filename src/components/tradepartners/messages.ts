@@ -116,7 +116,7 @@ const buttons = defineMessages({
 const titles = defineMessages({
     list: {
         id: `${titleScope}.list`,
-        defaultMessage: 'Trade Partners',
+        defaultMessage: 'Trade Partners - MicroFE',
     },
     create: {
         id: `${titleScope}.create`,

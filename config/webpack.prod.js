@@ -10,7 +10,7 @@ const config = {
     },
     devtool: 'source-map',
     devServer: {
-        port: 3000,
+        port: 3001,
         historyApiFallback: true,
         headers: {
             "Access-Control-Allow-Origin": "*"

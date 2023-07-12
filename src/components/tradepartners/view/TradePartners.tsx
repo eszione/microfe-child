@@ -1,4 +1,4 @@
-import { FC, Fragment, useContext, useEffect, useState } from 'react';
+import React, { FC, Fragment, useContext, useEffect, useState } from 'react';
 import { useIntl } from 'react-intl';
 import { useSelector } from 'react-redux';
 import { RouteConfig } from 'react-router-config';
@@ -101,6 +101,7 @@ export const TradePartners: FC<{ location: RouteConfig['location'] }> = ({
             header={
                 <Fragment>
                     <H1>{intl.formatMessage(msg.titles.list)}</H1>
+                    {React.version}
                     <ButtonsWrapper>
                         <TextButton
                             data-test-id={testIds.agentCsvTestId}

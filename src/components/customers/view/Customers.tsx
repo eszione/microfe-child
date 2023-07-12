@@ -1,4 +1,4 @@
-import { FC, Fragment, ReactNode, useEffect, useState } from "react";
+import React, { FC, Fragment, ReactNode, useEffect, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { Link as RouterLink } from "react-router-dom";
 import styled from "styled-components";
@@ -66,7 +66,7 @@ export const Customers: FC<CustomersProps> = ({
             <H1>
               <FormattedMessage {...msg.titles.list} />
             </H1>
-
+            {React.version}
             <TextButton
               data-test-id={testIds.createCustomerTestId}
               as={RouterLink}

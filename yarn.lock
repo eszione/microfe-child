@@ -4254,7 +4254,7 @@ bytes@3.1.2:
   resolved "https://tourismholdinglimited.jfrog.io/tourismholdinglimited/api/npm/npm-cosmos-virtual/bytes/-/bytes-3.1.2.tgz#8b0beeb98605adf1b128fa4386403c009e0221a5"
   integrity sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==
 
-cacache@^12.0.3:
+cacache@^12.0.2, cacache@^12.0.3:
   version "12.0.4"
   resolved "https://tourismholdinglimited.jfrog.io/tourismholdinglimited/api/npm/npm-cosmos-virtual/cacache/-/cacache-12.0.4.tgz#668bcbd105aeb5f1d92fe25570ec9525c8faa40c"
   integrity sha512-a0tMB40oefvuInr4Cwb3GerbL9xTj1D5yg0T5xrjGCGyfvbxseIXX7BAO/u/hIXdafzOI5JC3wDwHyf24buOAQ==
@@ -4714,10 +4714,10 @@ cosmiconfig@^7.0.0:
     path-type "^4.0.0"
     yaml "^1.10.0"
 
-cosmos-components@2.0.0-alpha.288:
-  version "2.0.0-alpha.288"
-  resolved "https://tourismholdinglimited.jfrog.io/tourismholdinglimited/api/npm/npm-cosmos-virtual/cosmos-components/-/cosmos-components-2.0.0-alpha.288.tgz#7e6a6f6b758ff95c4fb35ad694459171d5430ee2"
-  integrity sha512-JwE/Ghe7I0MEAozdXArwzIw12fWLlu0zSuTe1XejMf2N/dSmygZVxxlV/28JJ5GlvFigM+CuDpXw3aVBgfud6A==
+cosmos-components@1.35.0:
+  version "1.35.0"
+  resolved "https://tourismholdinglimited.jfrog.io/tourismholdinglimited/api/npm/npm-cosmos-virtual/cosmos-components/-/cosmos-components-1.35.0.tgz#5fa34c62b03c71f7eacd011474586af83be71d5f"
+  integrity sha512-fGw20NMnHlTuwVgE0LwZbMILE9Q5RUqA7DKIi75CX19PlFuwHanAi8UR4gnZF2lol9pjLq32sKoaIBzvw88gOQ==
   dependencies:
     classnames "^2.3.2"
     date-fns "^2.30.0"
@@ -4924,7 +4924,7 @@ cssnano-utils@^3.1.0:
   resolved "https://tourismholdinglimited.jfrog.io/tourismholdinglimited/api/npm/npm-cosmos-virtual/cssnano-utils/-/cssnano-utils-3.1.0.tgz#95684d08c91511edfc70d2636338ca37ef3a6861"
   integrity sha512-JQNR19/YZhz4psLX/rQ9M83e3z2Wf/HdJbryzte4a3NSuafyp9w/I4U+hx5C2S9g41qlstH7DEWnZaaj83OuEA==
 
-cssnano@^5.0.6:
+cssnano@^5.0.2, cssnano@^5.0.6:
   version "5.1.15"
   resolved "https://tourismholdinglimited.jfrog.io/tourismholdinglimited/api/npm/npm-cosmos-virtual/cssnano/-/cssnano-5.1.15.tgz#ded66b5480d5127fcb44dac12ea5a983755136bf"
   integrity sha512-j+BKgDcLDQA+eDifLx0EO4XSA56b7uut3BQFH+wbSaSTuGLuiyTa/wbRYthUXX8LC9mLg+WWKe8h+qJuwTAbHw==
@@ -5370,6 +5370,13 @@ envinfo@^7.7.3:
   version "7.8.1"
   resolved "https://tourismholdinglimited.jfrog.io/tourismholdinglimited/api/npm/npm-cosmos-virtual/envinfo/-/envinfo-7.8.1.tgz#06377e3e5f4d379fea7ac592d5ad8927e0c4d475"
   integrity sha512-/o+BXHmB7ocbHEAs6F2EnG0ogybVVUdkRunTT2glZU9XAaGmhqskrvKwqXuDfNjEO0LZKWdejEEpnq8aM0tOaw==
+
+errno@~0.1.7:
+  version "0.1.8"
+  resolved "https://tourismholdinglimited.jfrog.io/tourismholdinglimited/api/npm/npm-cosmos-virtual/errno/-/errno-0.1.8.tgz#8bb3e9c7d463be4976ff888f76b4809ebc2e811f"
+  integrity sha512-dJ6oBr5SQ1VSd9qkk7ByRgb/1SH4JZjCHSW/mr63/QcXO9zLVxvJ6Oy13nio03rxpSnVDDjFor75SjVeZWPW/A==
+  dependencies:
+    prr "~1.0.1"
 
 error-ex@^1.3.1:
   version "1.3.2"
@@ -6958,6 +6965,11 @@ is-weakset@^2.0.1:
     call-bind "^1.0.2"
     get-intrinsic "^1.1.1"
 
+is-wsl@^1.1.0:
+  version "1.1.0"
+  resolved "https://tourismholdinglimited.jfrog.io/tourismholdinglimited/api/npm/npm-cosmos-virtual/is-wsl/-/is-wsl-1.1.0.tgz#1f16e4aa22b04d1336b66188a66af3c600c3a66d"
+  integrity sha512-gfygJYZ2gLTDlmbWMI0CE2MwnFzSN/2SZfkMlItC4K/JBlsWVDB0bO6XhqcY13YXE7iMcAJnzTCJjPiTeJJ0Mw==
+
 is-wsl@^2.2.0:
   version "2.2.0"
   resolved "https://tourismholdinglimited.jfrog.io/tourismholdinglimited/api/npm/npm-cosmos-virtual/is-wsl/-/is-wsl-2.2.0.tgz#74a4c76e77ca9fd3f932f290c17ea326cd157271"
@@ -7735,6 +7747,14 @@ language-tags@=1.0.5:
   dependencies:
     language-subtag-registry "~0.3.2"
 
+last-call-webpack-plugin@^3.0.0:
+  version "3.0.0"
+  resolved "https://tourismholdinglimited.jfrog.io/tourismholdinglimited/api/npm/npm-cosmos-virtual/last-call-webpack-plugin/-/last-call-webpack-plugin-3.0.0.tgz#9742df0e10e3cf46e5c0381c2de90d3a7a2d7555"
+  integrity sha512-7KI2l2GIZa9p2spzPIVZBYyNKkN+e/SQPpnjlTiPhdbDW3F86tdKKELxKpzJ5sgU19wQWsACULZmpTPYHeWO5w==
+  dependencies:
+    lodash "^4.17.5"
+    webpack-sources "^1.1.0"
+
 launch-editor@^2.6.0:
   version "2.6.0"
   resolved "https://tourismholdinglimited.jfrog.io/tourismholdinglimited/api/npm/npm-cosmos-virtual/launch-editor/-/launch-editor-2.6.0.tgz#4c0c1a6ac126c572bd9ff9a30da1d2cae66defd7"
@@ -7849,7 +7869,7 @@ lodash.uniq@^4.5.0:
   resolved "https://tourismholdinglimited.jfrog.io/tourismholdinglimited/api/npm/npm-cosmos-virtual/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==
 
-lodash@^4.17.15, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.7.0:
+lodash@^4.17.15, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.5, lodash@^4.7.0:
   version "4.17.21"
   resolved "https://tourismholdinglimited.jfrog.io/tourismholdinglimited/api/npm/npm-cosmos-virtual/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -8329,6 +8349,15 @@ open@^8.0.9, open@^8.4.0:
     define-lazy-prop "^2.0.0"
     is-docker "^2.1.1"
     is-wsl "^2.2.0"
+
+optimize-css-assets-webpack-plugin@^6.0.1:
+  version "6.0.1"
+  resolved "https://tourismholdinglimited.jfrog.io/tourismholdinglimited/api/npm/npm-cosmos-virtual/optimize-css-assets-webpack-plugin/-/optimize-css-assets-webpack-plugin-6.0.1.tgz#7719bceabba1f3891ec3ae04efb81a1cc99cd793"
+  integrity sha512-BshV2UZPfggZLdUfN3zFBbG4sl/DynUI+YCB6fRRDWaqO2OiWN8GPcp4Y0/fEV6B3k9Hzyk3czve3V/8B/SzKQ==
+  dependencies:
+    cssnano "^5.0.2"
+    last-call-webpack-plugin "^3.0.0"
+    postcss "^8.2.1"
 
 optionator@^0.8.1:
   version "0.8.3"
@@ -9112,6 +9141,15 @@ postcss@^7.0.35:
     picocolors "^0.2.1"
     source-map "^0.6.1"
 
+postcss@^8.2.1:
+  version "8.4.25"
+  resolved "https://tourismholdinglimited.jfrog.io/tourismholdinglimited/api/npm/npm-cosmos-virtual/postcss/-/postcss-8.4.25.tgz#4a133f5e379eda7f61e906c3b1aaa9b81292726f"
+  integrity sha512-7taJ/8t2av0Z+sQEvNzCkpDynl0tX3uJMCODi6nT3PfASC7dYCWV9aQ+uiCf+KBD4SEFcu+GvJdGdwzQ6OSjCw==
+  dependencies:
+    nanoid "^3.3.6"
+    picocolors "^1.0.0"
+    source-map-js "^1.0.2"
+
 postcss@^8.3.5, postcss@^8.4.21, postcss@^8.4.23, postcss@^8.4.4:
   version "8.4.23"
   resolved "https://tourismholdinglimited.jfrog.io/tourismholdinglimited/api/npm/npm-cosmos-virtual/postcss/-/postcss-8.4.23.tgz#df0aee9ac7c5e53e1075c24a3613496f9e6552ab"
@@ -9213,6 +9251,11 @@ proxy-addr@~2.0.7:
   dependencies:
     forwarded "0.2.0"
     ipaddr.js "1.9.1"
+
+prr@~1.0.1:
+  version "1.0.1"
+  resolved "https://tourismholdinglimited.jfrog.io/tourismholdinglimited/api/npm/npm-cosmos-virtual/prr/-/prr-1.0.1.tgz#d3fc114ba06995a45ec6893f484ceb1d78f5f476"
+  integrity sha512-yPw4Sng1gWghHQWj0B3ZggWUm4qVbPwPFcRG8KyxiU7J2OHFSoEHKS+EZ3fv5l1t9CyCiop6l/ZYeWbrgoQejw==
 
 psl@^1.1.33:
   version "1.9.0"
@@ -10222,7 +10265,7 @@ source-map-loader@^3.0.0:
     iconv-lite "^0.6.3"
     source-map-js "^1.0.1"
 
-source-map-support@^0.5.6, source-map-support@~0.5.20:
+source-map-support@^0.5.6, source-map-support@~0.5.12, source-map-support@~0.5.20:
   version "0.5.21"
   resolved "https://tourismholdinglimited.jfrog.io/tourismholdinglimited/api/npm/npm-cosmos-virtual/source-map-support/-/source-map-support-0.5.21.tgz#04fe7c7f9e1ed2d662233c28cb2b35b9f63f6e4f"
   integrity sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==
@@ -10670,6 +10713,21 @@ terminal-link@^2.0.0:
     ansi-escapes "^4.2.1"
     supports-hyperlinks "^2.0.0"
 
+terser-webpack-plugin@1.4.5:
+  version "1.4.5"
+  resolved "https://tourismholdinglimited.jfrog.io/tourismholdinglimited/api/npm/npm-cosmos-virtual/terser-webpack-plugin/-/terser-webpack-plugin-1.4.5.tgz#a217aefaea330e734ffacb6120ec1fa312d6040b"
+  integrity sha512-04Rfe496lN8EYruwi6oPQkG0vo8C+HT49X687FZnpPF0qMAIHONI6HEXYPKDOE8e5HjXTyKfqRd/agHtH0kOtw==
+  dependencies:
+    cacache "^12.0.2"
+    find-cache-dir "^2.1.0"
+    is-wsl "^1.1.0"
+    schema-utils "^1.0.0"
+    serialize-javascript "^4.0.0"
+    source-map "^0.6.1"
+    terser "^4.1.2"
+    webpack-sources "^1.4.0"
+    worker-farm "^1.7.0"
+
 terser-webpack-plugin@^5.2.5, terser-webpack-plugin@^5.3.7:
   version "5.3.9"
   resolved "https://tourismholdinglimited.jfrog.io/tourismholdinglimited/api/npm/npm-cosmos-virtual/terser-webpack-plugin/-/terser-webpack-plugin-5.3.9.tgz#832536999c51b46d468067f9e37662a3b96adfe1"
@@ -10680,6 +10738,15 @@ terser-webpack-plugin@^5.2.5, terser-webpack-plugin@^5.3.7:
     schema-utils "^3.1.1"
     serialize-javascript "^6.0.1"
     terser "^5.16.8"
+
+terser@^4.1.2:
+  version "4.8.1"
+  resolved "https://tourismholdinglimited.jfrog.io/tourismholdinglimited/api/npm/npm-cosmos-virtual/terser/-/terser-4.8.1.tgz#a00e5634562de2239fd404c649051bf6fc21144f"
+  integrity sha512-4GnLC0x667eJG0ewJTa6z/yXrbLGv80D9Ru6HIpCQmO+Q4PfEtBFi0ObSckqwL6VyQv/7ENJieXHo2ANmdQwgw==
+  dependencies:
+    commander "^2.20.0"
+    source-map "~0.6.1"
+    source-map-support "~0.5.12"
 
 terser@^5.0.0, terser@^5.10.0, terser@^5.16.8:
   version "5.17.5"
@@ -11215,7 +11282,7 @@ webpack-merge@^5.7.3, webpack-merge@^5.9.0:
     clone-deep "^4.0.1"
     wildcard "^2.0.0"
 
-webpack-sources@^1.4.3:
+webpack-sources@^1.1.0, webpack-sources@^1.4.0, webpack-sources@^1.4.3:
   version "1.4.3"
   resolved "https://tourismholdinglimited.jfrog.io/tourismholdinglimited/api/npm/npm-cosmos-virtual/webpack-sources/-/webpack-sources-1.4.3.tgz#eedd8ec0b928fbf1cbfe994e22d2d890f330a933"
   integrity sha512-lgTS3Xhv1lCOKo7SA5TjKXMjpSM4sBjNV5+q2bqesbSPs5FjGmU6jjtBSkX9b4qW87vDIsCIlUPOEhbZrMdjeQ==
@@ -11540,6 +11607,13 @@ workbox-window@6.5.4:
   dependencies:
     "@types/trusted-types" "^2.0.2"
     workbox-core "6.5.4"
+
+worker-farm@^1.7.0:
+  version "1.7.0"
+  resolved "https://tourismholdinglimited.jfrog.io/tourismholdinglimited/api/npm/npm-cosmos-virtual/worker-farm/-/worker-farm-1.7.0.tgz#26a94c5391bbca926152002f69b84a4bf772e5a8"
+  integrity sha512-rvw3QTZc8lAxyVrqcSGVm5yP/IJ2UcB3U0graE3LCFoZ0Yn2x4EoVSqJKdB/T5M+FLcRPjz4TDacRf3OCfNUzw==
+  dependencies:
+    errno "~0.1.7"
 
 wrap-ansi@^7.0.0:
   version "7.0.0"

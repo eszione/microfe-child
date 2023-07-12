@@ -8,7 +8,7 @@ const config = {
     output: {
         publicPath: 'auto',
     },
-    devtool: 'eval-source-map',
+    devtool: 'source-map',
     devServer: {
         port: 3000,
         historyApiFallback: true,
@@ -25,11 +25,17 @@ const config = {
             },
             shared: {
                 ...packageJson.dependencies,
-                react: { requiredVersion: packageJson.dependencies.react },
-                'react-dom': { requiredVersion: packageJson.dependencies['react-dom'] },
-                'react-router-dom': { requiredVersion: packageJson.dependencies['react-router-dom'] },
-                'react-redux': { requiredVersion: packageJson.dependencies['react-redux'] },
-                'react-intl': { requiredVersion: packageJson.dependencies['react-intl'] },
+                // react: {
+                //     import: 'react', // the "react" package will be used a provided and fallback module
+                //     shareKey: 'react', // under this name the shared module will be placed in the share scope
+                //     shareScope: 'default', // share scope with this name will be used
+                //     singleton: true, // only a single version of the shared module is allowed
+                //     requiredVersion: packageJson.dependencies.react
+                //   },
+                // 'react-dom': {
+                //     singleton: true, // only a single version of the shared module is allowed
+                //     requiredVersion: packageJson.dependencies['react-dom']
+                // }
             }
         }),
     ]

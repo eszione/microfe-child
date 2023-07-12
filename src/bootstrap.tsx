@@ -2,21 +2,14 @@ import React from 'react';
 import { render } from 'react-dom';
 import './index.css';
 import App from './App';
-import { Router } from 'react-router-dom';
-import { Store } from './core/store/Store';
-import { Internationalization } from './components/internationalization/Internationalization';
-import { getHistory } from './helpers/window.helper';
+import { ExternalWrapper } from './externals/external-wrapper/ExternalWrapper';
 
 const mount = (el: HTMLElement) => {
   render(
     <React.StrictMode>
-      <Internationalization>
-        <Router history={getHistory()}>
-          <Store>
-            <App />
-          </Store>
-        </Router>
-      </Internationalization>
+      <ExternalWrapper>
+        <App />
+      </ExternalWrapper>
     </React.StrictMode>,
     el
   );

@@ -25,10 +25,8 @@ const config = {
             },
             shared: {
                 ...packageJson.dependencies,
-                //react: { requiredVersion: packageJson.dependencies.react },
-                //'react-dom': { requiredVersion: packageJson.dependencies['react-dom'] },
-                //'react-router-dom': { requiredVersion: packageJson.dependencies['react-router-dom'] },
-                // 'react-intl': { requiredVersion: packageJson.dependencies['react-intl'] },
+                react: { singleton: true },
+                'react-dom': { singleton: true },
             }
         }),
     ]

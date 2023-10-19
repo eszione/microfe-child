@@ -1,13 +1,6 @@
-.App {
-  margin: 1rem;
-  text-align: center;
-}
-
-header {
-  font-weight: bold;
-}
-
 .header {
   background: white;
   color: black;
+  font-weight: bold;
+  text-align: center;
 }

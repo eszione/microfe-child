@@ -1,4 +1,4 @@
-import { Customers } from "../../components/customers/view/Customers";
+import { Customers } from "../../pages/Customers/Customers";
 
 export const routes = [
   {

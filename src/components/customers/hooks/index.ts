@@ -1,1 +1,0 @@
-export { useCustomersSearch } from "./useCustomersSearch";

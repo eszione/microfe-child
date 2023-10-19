@@ -1,0 +1,59 @@
+// From astro-app
+$fa-font-path: '~font-awesome/fonts'
+@import "~font-awesome/scss/font-awesome"
+@import "~astro-components/dist/styles/default"
+
+body
+  background: #F5F5F8
+  font-size: 14px
+
+h1, h2, h3, h4, h5, h6
+  margin: 0 0 1rem
+  font-weight: 400
+
+a
+  text-decoration: none
+  color: $primary-color
+  cursor: pointer
+
+li, ul
+  list-style: none
+
+.title-button
+  float: right
+  margin-top: .5rem
+
+form
+  .delete
+    color: grey
+    display: block
+    margin-top: 3rem
+    font-size: 1.6rem
+
+    &:hover
+      color: red
+
+
+input::placeholder
+  color: #ccc
+
++block(data-grid)
+  +element(tr)
+    &:last-of-type
+      +element(td)
+        border: none
+
+
++block(section)
+  +modifier(table)
+    +element(header)
+      border-bottom: none
+
+    +element(content)
+      padding-top: 0
+
+  +block(data-grid)
+    +element(th)
+      font-size: 1.2rem
+      font-weight: normal
+      color: grey

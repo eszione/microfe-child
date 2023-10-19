@@ -1,0 +1,19 @@
+:root {
+    --background-gray: hsl(240, 18%, 97%);
+    --border-gray: hsl(0, 0%, 75%);
+    --border-lightgray: hsla(0, 0%, 0%, 0.08);
+    --card-border: hsla(0, 0%, 0%, 0.08);
+    --card-main: hsl(227, 22%, 16%);
+    --blue-main: hsl(213, 97%, 53%);
+    --r2d2-blue: #157EFB;
+    --china-blue: #1174EA;
+    --dark-china-blue: #0D65CD;
+    --double-happy-smoke: #F5F5F8;
+    --primer-grey: #BEBEBE;
+    --outline: #7BB5FA;
+    --white: hsl(0, 100%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --inverted-default: hsl(225, 5%, 30%);
+    --nav-text: #707070;
+    --nav-text-background: #e6e6e6;
+  }

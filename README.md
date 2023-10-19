@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+# MicroFE Setup
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## To use astro-sso-sdk
+There is a [chrome extension](https://chrome.google.com/webstore/detail/copy-oicd/ppipchgknjphicdjlgjgeimghkoagggb?utm_source=ext_sidebar&hl=en-GB) which copies the oicd token from localhost:5000 to localhost:xxxx
 
-## Available Scripts
+Steps to get this to work:
+1. Install the chrome extension
+2. Run astro-app via localhost:5000
+3. Update the client id and env in the config.json (e.g. oidc.user:https://[env]accounts.thlonline.com:[client_id] to oidc.user:https://testaccounts.thlonline.com:microfe)
+4. Run the microFE
 
-In the project directory, you can run:
+# Source code
 
-### `npm start`
+## Core
+This bit contains logic for the core setup for the microFE. Core setup includes: astroSDK, history, routes, sharing of host data via window and the microFE redux store
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Routing
+Routing is handled by the host application, so the microFE mainly defines the routes
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Window
+Since routing is handled by the host, we are using the browser history from the host. This is stored in window['Motek_history']
 
-### `npm test`
+When sharing state from the host to the microFE, we have the host's redux store in the window['host_store']
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The microFe has it's own states defined in configureStore.ts. The name of the store needs to change for each microFE
 
-### `npm run build`
+## Externals
+All components that will be shared with the host application should live in the externals folder and exported in the index.tsx
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Webpack
+For microFE's, we cannot use the runtimeChunk and splitChunks optimization section (the host application will not be able to import the module federation component of the microFEs)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Global styling
+Shared .sass/.scss files are added via webpack's sass-resource-loader in webpack.common.js. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+There is also a css-loader which looks at node_modules .css files. This loader only adds .css files from npm package components which are referenced via the code (e.g. astro-components .css files won't be added by default). The issue arose in the customers list page (the template is based off this microFE) where the search input was not applying the styles as the styles came from the FieldRenderer component in astro-components.
 
-### `npm run eject`
+To decouple the microFE styles, we should extract the required CSS from astro-components to the microFE.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Module Federation
+We share the react and react-dom packages with a requiredVersion (see webpack.js). These version needs to match the host application's (astro-app) react and react-dom versions. When we upgrade react, we will need to upgrade react in every microFE (similar to a dotnet core upgrade for our BE services)

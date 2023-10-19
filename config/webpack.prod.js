@@ -8,8 +8,9 @@ const config = {
     output: {
         publicPath: 'auto',
     },
+    devtool: 'source-map',
     devServer: {
-        port: 3000,
+        port: 3001,
         historyApiFallback: true,
         headers: {
             "Access-Control-Allow-Origin": "*"
@@ -17,16 +18,15 @@ const config = {
     },
     plugins: [
         new ModuleFederationPlugin({
-            name: 'MicroFeChild',
+            name: 'MicroFETradePartners',
             filename: 'remoteEntry.js',
             exposes: {
-                './App': './src/bootstrap.tsx',
-                './Routes': './src/Routes.tsx',
-                './Components': './src/exports.tsx',
+                './Components': './src/externals/exports.tsx',
             },
             shared: {
                 ...packageJson.dependencies,
-                react: { requiredVersion: packageJson.dependencies.react }
+                react: { singleton: true },
+                'react-dom': { singleton: true },
             }
         }),
     ]

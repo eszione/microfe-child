@@ -1,19 +1,17 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import { render } from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+import { ExternalWrapper } from './externals/external-wrapper/ExternalWrapper';
 
 const mount = (el: HTMLElement) => {
-  const root = createRoot(el);
-
-  root.render(
+  render(
     <React.StrictMode>
-      <BrowserRouter>
+      <ExternalWrapper>
         <App />
-      </BrowserRouter>
-    </React.StrictMode>
+      </ExternalWrapper>
+    </React.StrictMode>,
+    el
   );
 };
 
@@ -23,10 +21,5 @@ if (process.env.NODE_ENV === 'development') {
       mount(devRoot)
   }
 }
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
 
 export { mount };
